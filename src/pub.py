@@ -1,3 +1,4 @@
 class Pub:
-    def __init__(self):
-        pass
+    def __init__(self, name, cash):
+        self.name = name
+        self.cash = cash
