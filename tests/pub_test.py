@@ -29,7 +29,12 @@ class TestPub(unittest.TestCase):
 
     def test_get_till(self):
         self.pub.get_till()
-        self.assertEqual(100, self.pub.till)
+        self.assertEqual(100.00, self.pub.till)
+
+
+    def test_add_cash_to_till(self):
+        self.pub.add_cash_to_till(10.00)
+        self.assertEqual(110.00, self.pub.get_till())
 
     # def test_can_get_drink_by_name(self):
     #     drink = self.pub.get_drink_by_name("Mojito")
