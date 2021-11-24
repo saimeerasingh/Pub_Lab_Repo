@@ -49,20 +49,24 @@ class TestPub(unittest.TestCase):
 
     
     def test_can_get_drink_by_name(self):
-        drink = self.pub.get_drink_by_name("Mojito")
-        self.assertEqual("Mojito", drink.name)
+        drink_name = self.pub.get_drink_by_name("Mojito")
+        self.assertEqual("Mojito", drink_name)
 
     def test_can_get_drink_price(self):
-        drink = self.pub.get_drink_price("Martini")
-        self.assertEqual(10.00, drink)
+        drink_price = self.pub.get_drink_price("Martini")
+        self.assertEqual(10.00, drink_price)
 
 
     def test_can_customer_buy_drink(self):
-        customer = Customer("George Bowen", 120.00)
+        customer = Customer("George Bowen", 120.00,29)
         self.pub.sell_drink_to_customer(customer, "Mojito")
         self.assertEqual(1, len(customer.intake))
         self.assertEqual(112.50, customer.wallet)
         self.assertEqual(107.50, self.pub.get_till())
+
+    def test_if_drink_is_alcoholic(self):
+        is_alcoholic_drink = self.pub.alcoholic_drink_check("Martini")
+        self.assertEqual(True , is_alcoholic_drink)
 
 
     

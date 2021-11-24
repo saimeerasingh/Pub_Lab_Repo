@@ -6,9 +6,9 @@ from src.drink import Drink
 
 class TestCustomer(unittest.TestCase):
     def setUp(self):
-        self.customer1 = Customer("George Bowen", 120.00)
-        self.customer2 = Customer("Harry Smiles", 24.30)
-        self.customer3 = Customer("Boris Johnson", 500.00)
+        self.customer1 = Customer("George Bowen", 120.00, 29)
+        self.customer2 = Customer("Harry Smiles", 24.30, 15)
+        self.customer3 = Customer("Boris Johnson", 500.00,54)
 
         self.customers = [self.customer1, self.customer2, self.customer3]
 
@@ -23,3 +23,6 @@ class TestCustomer(unittest.TestCase):
     def test_can_reduce_customer_cash(self):
         self.customer1.reduce_cash(10.00)
         self.assertEqual(110,self.customer1.wallet)
+
+    # def test_can_get_alcoholic_drink(self):
+    #     self.customer2.check_age()
