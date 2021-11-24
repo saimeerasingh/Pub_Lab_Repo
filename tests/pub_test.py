@@ -20,11 +20,20 @@ class TestPub(unittest.TestCase):
 
 
     def test_pub_has_cash(self):
-        self.assertEqual(100.00, self.pub.cash)
+        self.assertEqual(100.00, self.pub.till)
 
 
     def test_get_menu(self):
         self.pub.get_menu()
         self.assertEqual(self.drink_menu, self.pub.drink_menu)
+
+    def test_get_till(self):
+        self.pub.get_till()
+        self.assertEqual(100, self.pub.till)
+
+    # def test_can_get_drink_by_name(self):
+    #     drink = self.pub.get_drink_by_name("Mojito")
+    #     self.assertEqual(("Mojito", 7.50, True), drink[drink.name])
+
 
 

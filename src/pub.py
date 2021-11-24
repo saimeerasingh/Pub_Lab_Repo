@@ -1,10 +1,21 @@
 class Pub:
-    def __init__(self, name, cash, drink_menu):
+    def __init__(self, name, till, drink_menu):
         self.name = name
-        self.cash = cash
+        self.till = till
         self.drink_menu = drink_menu
         self.drinks_sold = 0
 
     
     def get_menu(self):
         return self.drink_menu
+
+    def get_till(self):
+        return self.till
+
+
+    # def get_drink_by_name(self, drink_name):
+    #     for drink in self.drink_menu:
+    #         if drink_name == drink.name:
+    #             return drink
+    #         else:
+    #             return None
