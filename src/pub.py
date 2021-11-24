@@ -22,9 +22,14 @@ class Pub:
         self.drink_menu.remove(removed_drink)
 
 
-    # def get_drink_by_name(self, drink_name):
-    #     for drink in self.drink_menu:
-    #         if drink_name == drink.name:
-    #             return drink
-    #         else:
-    #             return None
+    def get_drink_by_name(self, drink_name):
+        for drink in self.drink_menu:
+            if drink_name == drink.name:
+                return drink
+
+    def get_drink_price(self,drink_name):
+        for drink in self.drink_menu:
+            if drink_name == drink.name:
+                return drink
+
+    

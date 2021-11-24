@@ -48,10 +48,17 @@ class TestPub(unittest.TestCase):
         self.assertEqual(2, len(self.drink_menu))
 
     
+    def test_can_get_drink_by_name(self):
+        drink = self.pub.get_drink_by_name("Mojito")
+        self.assertEqual("Mojito", drink.name)
 
-    # def test_can_get_drink_by_name(self):
-    #     drink = self.pub.get_drink_by_name("Mojito")
-    #     self.assertEqual(("Mojito", 7.50, True), drink[drink.name])
+    def test_can_get_drink_price(self):
+        drink = self.pub.get_drink_price("Martini")
+        self.assertEqual(10.00, drink.price)
+
+
+    
+        
 
 
 
