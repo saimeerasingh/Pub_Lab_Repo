@@ -36,6 +36,19 @@ class TestPub(unittest.TestCase):
         self.pub.add_cash_to_till(10.00)
         self.assertEqual(110.00, self.pub.get_till())
 
+
+    def test_add_drink_to_menu(self):
+        new_drink = ("Diet Coke", 2.50, False)
+        self.pub.add_drink_to_menu(new_drink)
+        self.assertEqual(4, len(self.drink_menu))
+
+    def test_remove_drink_from_menu(self):
+        removed_drink = self.drink_menu[1]
+        self.pub.remove_drink_from_menu(removed_drink)
+        self.assertEqual(2, len(self.drink_menu))
+
+    
+
     # def test_can_get_drink_by_name(self):
     #     drink = self.pub.get_drink_by_name("Mojito")
     #     self.assertEqual(("Mojito", 7.50, True), drink[drink.name])

@@ -15,6 +15,12 @@ class Pub:
     def add_cash_to_till(self, amount):
         self.till += amount
 
+    def add_drink_to_menu(self, new_drink):
+        self.drink_menu.append(new_drink)
+
+    def remove_drink_from_menu(self, removed_drink):
+        self.drink_menu.remove(removed_drink)
+
 
     # def get_drink_by_name(self, drink_name):
     #     for drink in self.drink_menu:
