@@ -10,7 +10,16 @@ class TestCustomer(unittest.TestCase):
         self.customer2 = Customer("Harry Smiles", 24.30)
         self.customer3 = Customer("Boris Johnson", 500.00)
 
-    # def test_buy_drink_from_pub(self):
-    #     customer = self.customer1
-        
-    #     self.buy_a_drink(customer, )       
+        self.customers = [self.customer1, self.customer2, self.customer3]
+
+
+    def test_can_add_drink_to_customer(self):
+        drink1 = Drink("Martini", 10.00, True)
+        self.customer1.add_drink_to_customer(drink1)
+        self.assertEqual(1,len(self.customer1.intake))
+
+         
+         
+    def test_can_reduce_customer_cash(self):
+        self.customer1.reduce_cash(10.00)
+        self.assertEqual(110,self.customer1.wallet)

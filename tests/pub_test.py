@@ -54,7 +54,15 @@ class TestPub(unittest.TestCase):
 
     def test_can_get_drink_price(self):
         drink = self.pub.get_drink_price("Martini")
-        self.assertEqual(10.00, drink.price)
+        self.assertEqual(10.00, drink)
+
+
+    def test_can_customer_buy_drink(self):
+        customer = Customer("George Bowen", 120.00)
+        self.pub.sell_drink_to_customer(customer, "Mojito")
+        self.assertEqual(1, len(customer.intake))
+        self.assertEqual(112.50, customer.wallet)
+        self.assertEqual(107.50, self.pub.get_till())
 
 
     

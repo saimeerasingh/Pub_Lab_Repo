@@ -27,9 +27,15 @@ class Pub:
             if drink_name == drink.name:
                 return drink
 
+
     def get_drink_price(self,drink_name):
         for drink in self.drink_menu:
             if drink_name == drink.name:
-                return drink
-
+                return drink.price
+                
     
+    def sell_drink_to_customer(self, customer, drink):
+        drink_price = self.get_drink_price(drink)
+        customer.add_drink_to_customer(drink)
+        customer.reduce_cash(drink_price)
+        self.add_cash_to_till(drink_price)
