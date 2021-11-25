@@ -1,3 +1,7 @@
+from src.customer import Customer
+from src.drink import Drink
+
+
 class Pub:
     def __init__(self, name, till, drink_menu):
         self.name = name
@@ -39,8 +43,18 @@ class Pub:
         customer.add_drink_to_customer(drink)
         customer.reduce_cash(drink_price)
         self.add_cash_to_till(drink_price)
-
-    def alcoholic_drink_check(self,drink_name):
+   
+    def find_alcoholic_drink(self,drink_name):
         for drink in self.drink_menu:
             if drink.name == drink_name:
                 return drink.alcohol_status
+
+    def find_non_alcoholic_drink(self):
+        for drink in self.drink_menu:
+            if drink.alcohol_status == False:
+                return drink.name
+
+    def can_buy_alcohol(self,customer,drink):
+        customer.is_of_legal_age()    
+        drink.is_non_alcoholic_drink()
+        return self.find_non_alcoholic_drink()

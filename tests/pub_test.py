@@ -65,8 +65,19 @@ class TestPub(unittest.TestCase):
         self.assertEqual(107.50, self.pub.get_till())
 
     def test_if_drink_is_alcoholic(self):
-        is_alcoholic_drink = self.pub.alcoholic_drink_check("Martini")
+        is_alcoholic_drink = self.pub.find_alcoholic_drink("Martini")
         self.assertEqual(True , is_alcoholic_drink)
+
+    def test_if_drink_is_non_alcoholic(self):
+        is_non_alcoholic_drink = self.drink3.is_non_alcoholic_drink()
+        self.assertEqual('Apple Fizz', is_non_alcoholic_drink)
+
+
+    def test_if_customer_can_buy_alcohol(self):
+        customer = Customer("Harry Smiles", 24.30, 15)
+        drink_ordered = Drink("Martini", 10.00, True)
+        alcohol_order = self.pub.can_buy_alcohol(customer, drink_ordered)
+        self.assertEqual('Apple Fizz' , alcohol_order )
 
 
     

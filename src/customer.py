@@ -12,6 +12,9 @@ class Customer:
     def reduce_cash(self,amount):
         self.wallet -= amount
 
-    
-        
+    def is_of_legal_age(self):
+            if self.age >= 18:
+               return True
+            else:
+               return False
 

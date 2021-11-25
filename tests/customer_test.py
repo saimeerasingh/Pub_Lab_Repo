@@ -18,11 +18,13 @@ class TestCustomer(unittest.TestCase):
         self.customer1.add_drink_to_customer(drink1)
         self.assertEqual(1,len(self.customer1.intake))
 
-         
-         
+              
     def test_can_reduce_customer_cash(self):
         self.customer1.reduce_cash(10.00)
         self.assertEqual(110,self.customer1.wallet)
 
-    # def test_can_get_alcoholic_drink(self):
-    #     self.customer2.check_age()
+    def test_can_check_for_age(self):
+        is_customer_of_legal_age = self.customer2.is_of_legal_age()
+        self.assertEqual(False , is_customer_of_legal_age)
+
+    
