@@ -5,5 +5,8 @@ class Drink:
         self.alcohol_status = alcohol_status
     
     def is_non_alcoholic_drink(self):
-        if self.alcohol_status == False:
-            return self.name
+        return self.alcohol_status == False
+
+    
+          
+

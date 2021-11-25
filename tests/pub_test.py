@@ -12,6 +12,7 @@ class TestPub(unittest.TestCase):
         self.drink2 = Drink("Mojito", 7.50, True)
         self.drink3 = Drink("Apple Fizz", 3.20, False)
         self.drink_menu = [self.drink1, self.drink2, self.drink3]
+
         self.pub = Pub("The Prancing Pony", 100.00, self.drink_menu)
 
 
@@ -68,9 +69,13 @@ class TestPub(unittest.TestCase):
         is_alcoholic_drink = self.pub.find_alcoholic_drink("Martini")
         self.assertEqual(True , is_alcoholic_drink)
 
-    def test_if_drink_is_non_alcoholic(self):
-        is_non_alcoholic_drink = self.drink3.is_non_alcoholic_drink()
-        self.assertEqual('Apple Fizz', is_non_alcoholic_drink)
+    # def test_if_drink_is_non_alcoholic(self):
+    #     is_non_alcoholic_drink = self.drink3.is_non_alcoholic_drink()
+    #     self.assertEqual('Apple Fizz', is_non_alcoholic_drink)
+
+    def test_to_find_non_alcoholic_drink(self):
+        non_alcoholic_drink_found = self.pub.find_non_alcoholic_drink()
+        self.assertEqual('Apple Fizz' , non_alcoholic_drink_found)
 
 
     def test_if_customer_can_buy_alcohol(self):
